@@ -1,4 +1,4 @@
-chirp-rest
+chirp-rest [![Build Status](https://travis-ci.org/ddo/chirp-rest.svg)](https://travis-ci.org/ddo/chirp-rest)
 ==============
 
 > twitter streaming apis in nodejs
