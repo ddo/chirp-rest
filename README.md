@@ -1,7 +1,7 @@
 chirp-rest [![Build Status](https://travis-ci.org/ddo/chirp-rest.svg)](https://travis-ci.org/ddo/chirp-rest)
 ==============
 
-> twitter streaming apis in nodejs
+> twitter rest apis in nodejs
 
 [![NPM version](https://badge.fury.io/js/chirp-rest.png)](http://badge.fury.io/js/chirp-rest)
 [![Dependency Status](https://david-dm.org/ddo/chirp-rest.png?theme=shields.io)](https://david-dm.org/ddo/chirp-rest)
