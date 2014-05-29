@@ -43,7 +43,7 @@ describe("chirp-stream", function() {
     });
 
     var tweet_id;
-    var message = 'Yay....!!!';
+    var message = 'Yay_-....!!!';
 
     describe("#post new tweet", function() {
         it("should create a new tweet", function(done) {
