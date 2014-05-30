@@ -10,7 +10,7 @@ var twitter = new ChirpRest({
         secret: process.env.TWITTER_TOKEN_SECRET
     }
 });
-/*
+
 //get user timeline
 twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, res, body) {
     console.log(err);
@@ -25,6 +25,12 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', {
     console.log(body.length);
 });
 
+//get user timeline count = 10
+twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json?count=10', function(err, res, body) {
+    console.log(err);
+    console.log(body.length);
+});
+/*
 //post new status
 twitter.post('https://api.twitter.com/1.1/statuses/update.json', {
     status: 'Ladies!'
