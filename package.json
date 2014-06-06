@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ddo/chirp-rest",
   "dependencies": {
-    "debug": "^0.8.1",
+    "debug": "^1.0.0",
     "oauth-request": "0.0.1"
   },
   "devDependencies": {
