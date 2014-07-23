@@ -54,7 +54,21 @@ ChirpRest.prototype.get = function(url, param, callback) {
         url: url,
         qs: param,
         json: true
-    }, callback);
+    }, function(err, res, body) {
+        if(err) {
+            debug('#get request err', err);
+            return callback(err);
+        }
+
+        if(res.statusCode != 200) {
+            debug('#get twitter err', body);
+            return callback(body);
+        }
+
+        debug('#get success');
+
+        return callback(null, body);
+    });
 };
 
 ChirpRest.prototype.post = function(url, param, callback) {
@@ -79,5 +93,19 @@ ChirpRest.prototype.post = function(url, param, callback) {
         url: url,
         form: param,
         json: true
-    }, callback);
+    }, function(err, res, body) {
+        if(err) {
+            debug('#post request err', err);
+            return callback(err);
+        }
+
+        if(res.statusCode != 200) {
+            debug('#post twitter err', body);
+            return callback(body);
+        }
+
+        debug('#post success');
+
+        return callback(null, body);
+    });
 };
