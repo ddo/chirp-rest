@@ -27,13 +27,6 @@ function ChirpRest(opt) {
     });
 }
 
-/**
- * debug
- * 
- * @api private
- */
-ChirpRest.prototype._log = debug;
-
 ChirpRest.prototype.get = function(url, param, callback) {
     if(arguments.length === 2) {
         callback = param;
@@ -48,7 +41,7 @@ ChirpRest.prototype.get = function(url, param, callback) {
         throw new Error('callback is required');
     }
 
-    this._log('#get', url, param);
+    debug('#get', url, param);
 
     this.oauth.get({
         url: url,
@@ -87,7 +80,7 @@ ChirpRest.prototype.post = function(url, param, callback) {
         throw new Error('callback is required');
     }
 
-    this._log('#post', url, param);
+    debug('#post', url, param);
 
     this.oauth.post({
         url: url,
