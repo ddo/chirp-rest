@@ -17,7 +17,7 @@ describe("chirp-stream", function() {
     describe("#get tweets", function() {
         it("should be return 20 tweets", function(done) {
             
-            twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, res, tweets) {
+            twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, tweets) {
                 
                 expect(tweets).to.be.an('array').that.have.length(20);
                 expect(tweets[0]).to.have.property('id');
@@ -32,7 +32,7 @@ describe("chirp-stream", function() {
             
             twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', {
                 count: 5
-            }, function(err, res, tweets) {
+            }, function(err, tweets) {
                 
                 expect(tweets).to.be.an('array').that.have.length(5);
                 expect(tweets[0]).to.have.property('id');
@@ -50,7 +50,7 @@ describe("chirp-stream", function() {
             
             twitter.post('https://api.twitter.com/1.1/statuses/update.json', {
                 status: message
-            }, function(err, res, tweet) {
+            }, function(err, tweet) {
                 tweet_id = tweet.id_str;
 
                 expect(tweet).to.have.property('id');
@@ -64,7 +64,7 @@ describe("chirp-stream", function() {
     describe("#delete tweet", function() {
         it("should delete that new tweet", function(done) {
             
-            twitter.post('https://api.twitter.com/1.1/statuses/destroy/' + tweet_id + '.json', function(err, res, tweet) {
+            twitter.post('https://api.twitter.com/1.1/statuses/destroy/' + tweet_id + '.json', function(err, tweet) {
                 expect(tweet).to.have.property('id');
                 expect(tweet).to.have.property('created_at');
                 expect(tweet).to.have.property('text', message);
