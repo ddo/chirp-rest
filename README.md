@@ -32,7 +32,7 @@ var twitter = new ChirpRest({
 });
 
 //get user timeline
-twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, res, body) {
+twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, body) {
     //body -> tweets
 });
 ```
@@ -42,7 +42,7 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(
 * get user timeline
 
 ```js
-twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, res, body) {
+twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, body) {
     //body -> tweets
 });
 ```
@@ -52,7 +52,7 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(
 ```js
 twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', {
     count: 5
-}, function(err, res, body) {
+}, function(err, body) {
     //body -> tweets
 });
 ```
@@ -60,7 +60,7 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', {
 * get user timeline
 
 ```js
-twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, res, body) {
+twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, body) {
     //body -> tweets
 });
 ```
@@ -70,7 +70,7 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(
 ```js
 twitter.post('https://api.twitter.com/1.1/statuses/update.json', {
     status: 'chirp chirp'
-}, function(err, res, body) {
+}, function(err, body) {
     //body -> tweet data
 });
 ```

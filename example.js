@@ -12,7 +12,7 @@ var twitter = new ChirpRest({
 });
 
 //get user timeline
-twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, res, body) {
+twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(err, body) {
     console.log(err);
     console.log(body.length);
 });
@@ -20,13 +20,13 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', function(
 //get user timeline count = 5
 twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json', {
     count: 5
-}, function(err, res, body) {
+}, function(err, body) {
     console.log(err);
     console.log(body.length);
 });
 
 //get user timeline count = 10
-twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json?count=10', function(err, res, body) {
+twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json?count=10', function(err, body) {
     console.log(err);
     console.log(body.length);
 });
@@ -34,12 +34,12 @@ twitter.get('https://api.twitter.com/1.1/statuses/user_timeline.json?count=10', 
 //post new status
 twitter.post('https://api.twitter.com/1.1/statuses/update.json', {
     status: 'Ladies!'
-}, function(err, res, body) {
+}, function(err, body) {
     console.log(err);
     console.log(body);
     
     //delete
-    twitter.post('https://api.twitter.com/1.1/statuses/destroy/' + body.id + '.json', function(err, res, body) {
+    twitter.post('https://api.twitter.com/1.1/statuses/destroy/' + body.id + '.json', function(err, body) {
         console.log(err);
         console.log(body);
     });
